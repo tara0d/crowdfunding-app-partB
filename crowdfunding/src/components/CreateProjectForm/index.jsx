@@ -1,0 +1,151 @@
+import React, { useState } from "react";
+import ReactDOM from 'react-dom';
+
+// import { useNavigate } from 'react-router-dom';
+
+
+function CreateProjectForm() {
+    const [project, setProject] = useState({
+        title: '',
+        description: '',
+        goal: '',
+        //is_open - want to be automatically true
+        //date_created - want o be automatically set
+        //is_funded - want to be automatically false
+        funding_deadline:'',
+        min_players: '',
+        max_players:'',
+        min_age:'',
+        min_minutes:'',
+        max_minutes:'',
+    });
+
+//Todo:
+    //Google React date time for the 'date created- field - import library
+    //Create all the fields
+
+    const handleChange = (event) => {
+        const { id, value } = event.target;
+        setProject((prevProject) => ({
+            ...prevProject,
+            [id]: value
+        }));
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+    
+        if (title && description && goal && funding_deadline && min_players && max_players &&
+            min_age && min_minutes && max_minutes) {
+            postData().then((response) => {
+                console.log(response)
+        });
+        }
+    };
+    
+    const postData = async () => {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}projects/`, {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(project)
+        })
+        return response.json();
+    }
+
+    return(
+        
+        <form>
+            <div>
+                <label htmlFor="title">Title:</label>
+                <input type="text" id="title" placeholder="Name of game"
+                onChange={handleChange}></input>
+            </div>
+            <div>
+                <label htmlFor="description">Description:</label>
+                <input type="text" id="description" placeholder="What is your game about?"
+                onChange={handleChange}></input>
+            </div>
+            <div>
+                <label htmlFor="goal">Goal:</label>
+                <input type="text" id="goal" placeholder="How much do you need to raise?"
+                onChange={handleChange}></input>
+            </div>
+            <div>
+                <label htmlFor="funding_deadline">Funding deadline:</label>
+                <input type="text" id="funding_deadline"
+                onChange={handleChange}></input>
+            </div>
+            <div>
+                <label htmlFor="min_players">Minimum players:</label>
+                <input type="text" id="min_players"
+                onChange={handleChange}></input>
+            </div>
+            <div>
+                <label htmlFor="max_players">Maximum players:</label>
+                <input type="text" id="max_players"
+                onChange={handleChange}></input>
+            </div>
+            <div>
+                <label htmlFor="max_age">Minimum age:</label>
+                <input type="text" id="min_age"
+                onChange={handleChange}></input>
+            </div>
+            <div>
+                <label htmlFor="min_minutes">Minimum minutes of play:</label>
+                <input type="text" id="min_minutes"
+                onChange={handleChange}></input>
+            </div>
+            <div>
+                <label htmlFor="max_minutes">Maximum minutes of play:</label>
+                <input type="text" id="max_minutes"
+                onChange={handleChange}></input>
+            </div>
+
+            <button type="submit" onClick={handleSubmit}>Submit</button>
+
+        </form>
+    )
+};
+
+export default CreateProjectForm;
+
+
+
+
+    // const [gameDetails, setGameDetails] = useState({
+    //     title: '',
+    //     description: '',
+    // });
+
+
+
+//handleChange on LoginForm.jsx
+
+// const navigate = useNavigate();
+
+// const handleSubmit = (event) => {
+//     event.preventDefault();
+
+//     if (credentials.username && credentials.password) {
+//         postData().then((response) => {
+//             window.localStorage.setItem("token", response.token);
+//             navigate("/");
+//     });
+//     }
+// };
+
+// const postData = async () => {
+//     const response = await fetch(`${import.meta.env.VITE_API_URL}projects/`, {
+//         method: "post",
+//         headers: {
+//             "Content-Type": "application/json",
+//         },
+//         body: JSON.stringify(credentials)
+//     })
+//     return response.json();
+// }
+
+
+
