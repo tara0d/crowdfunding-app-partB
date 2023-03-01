@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+    background-color: #F3F9E3;
+    /* border: 1px solid black; */
+}
+
+
+#navigation {
+    background-color: #F3F9E3;
+    border-bottom: 4px solid #204E4A;
+    overflow: hidden;
+    /* position: fixed; */
+    top: 0;
+    /* height: 65px; */
+    width: 100%;
+    padding: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+#nav-logo {
+
+}
+
+#nav-links {
+    display: flex;
+    justify-content: space-around;
+    /* flex-grow: 2; */
+    padding: 15px;
+}
+
+.nav-links-text {
+    padding:15px;
+    font-size: 18px;
+}

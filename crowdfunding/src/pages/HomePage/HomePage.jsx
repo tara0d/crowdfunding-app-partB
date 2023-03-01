@@ -18,8 +18,8 @@ useEffect(() => {
 }, []);  //This is a dependency array - if nothing, run what is in this array when page first loads
 
     return (
-        <div>
-            <div class="project-card-wrapper">
+        <div id="project-list">
+            <div className="project-card-wrapper">
                 {projectList.map((projectData, key) => {
                     return <ProjectCard key={key} projectData={projectData} />;
                 })}

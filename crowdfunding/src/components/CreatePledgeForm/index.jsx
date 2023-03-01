@@ -5,21 +5,11 @@ import { useNavigate } from 'react-router-dom';
 // import { useNavigate } from 'react-router-dom';
 
 
-function CreateProjectForm() {
-    const [project, setProject] = useState({
-        title: '',
-        description: '',
-        goal: '',
-        //is_open - want to be automatically true
-        //date_created - want o be automatically set
-        //is_funded - want to be automatically false
-        funding_deadline:'',
-        min_players: '',
-        max_players:'',
-        min_age:'',
-        min_minutes:'',
-        max_minutes:'',
-        thumbnail_image:'',
+function CreatePledgeForm() {
+    const [pledge, setPledge] = useState({
+        amount: '',
+        comment: '',
+        anonymous: '',
     });
 
 //Todo:
@@ -41,8 +31,7 @@ function CreateProjectForm() {
     const handleSubmit = (event) => {
         event.preventDefault();
     
-        if (project.title && description && goal && funding_deadline && min_players && max_players &&
-            min_age && min_minutes && max_minutes && thumbnail_image) {
+        if (pledge.amount && comment && anonymous) {
             postData().then((response) => {
                 !formError && navigate(`/project/${response.id}`);
             })
@@ -73,18 +62,18 @@ function CreateProjectForm() {
         
         <form>
             <div>
-                <label htmlFor="title">Title:</label>
-                <input type="text" id="title" placeholder="Name of game"
+                <label htmlFor="amount">Amount:</label>
+                <input type="text" id="amount"
                 onChange={handleChange}></input>
             </div>
             <div>
-                <label htmlFor="description">Description:</label>
-                <input type="text" id="description" placeholder="What is your game about?"
+                <label htmlFor="comment">Comment:</label>
+                <input type="text" id="comment" placeholder="Do you have a message for the game developer?"
                 onChange={handleChange}></input>
             </div>
             <div>
-                <label htmlFor="goal">Goal:</label>
-                <input type="text" id="goal" placeholder="How much do you need to raise?"
+                <label htmlFor="anonymous">Anonymous:</label>
+                <input type="radio" id="goal" placeholder="How much do you need to raise?"
                 onChange={handleChange}></input>
             </div>
             <div>
@@ -134,42 +123,3 @@ function CreateProjectForm() {
 };
 
 export default CreateProjectForm;
-
-
-
-
-    // const [gameDetails, setGameDetails] = useState({
-    //     title: '',
-    //     description: '',
-    // });
-
-
-
-//handleChange on LoginForm.jsx
-
-// const navigate = useNavigate();
-
-// const handleSubmit = (event) => {
-//     event.preventDefault();
-
-//     if (credentials.username && credentials.password) {
-//         postData().then((response) => {
-//             window.localStorage.setItem("token", response.token);
-//             navigate("/");
-//     });
-//     }
-// };
-
-// const postData = async () => {
-//     const response = await fetch(`${import.meta.env.VITE_API_URL}projects/`, {
-//         method: "post",
-//         headers: {
-//             "Content-Type": "application/json",
-//         },
-//         body: JSON.stringify(credentials)
-//     })
-//     return response.json();
-// }
-
-
-
