@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import "./LoginForm.css";
 
 function LoginForm() {
     const [credentials, setCredentials] = useState({
@@ -40,14 +41,14 @@ const postData = async () => {
 }
 
     return(
-        <form>
-
-            <div>
+        <form id="login-form">
+            <h1>Welcome back</h1>
+            <div className="login-form-section">
                 <label htmlFor="username">Username:</label>
                 <input type="text" id="username" placeholder="Enter username"
                 onChange={handleChange}></input>
             </div>
-            <div>
+            <div className="login-form-section">
                 <label htmlFor="password">Password:</label>
                 <input type="password" id="password" placeholder="Enter password"
                 onChange={handleChange}></input>

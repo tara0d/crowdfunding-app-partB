@@ -71,61 +71,62 @@ function CreateProjectForm() {
     return(
         
         <form id="create-project-form">
-            <div>
-                <label htmlFor="title">Title:</label>
-                <input type="text" id="title" placeholder="Name of game"
+            <h1>Let's create a game!</h1>
+            <div className="project-form-section">
+                <label htmlFor="title">Name of your game:</label>
+                <input type="text" id="title"
                 onChange={handleChange}></input>
             </div>
-            <div>
-                <label htmlFor="description">Description:</label>
-                <input type="text" id="description" placeholder="What is your game about?"
+            <div className="project-form-section">
+                <label htmlFor="description">What is your game about?:</label>
+                <input type="text" id="description"
                 onChange={handleChange}></input>
             </div>
-            <div>
-                <label htmlFor="goal">Goal:</label>
-                <input type="text" id="goal" placeholder="How much do you need to raise?"
+            <div className="project-form-section">
+                <label htmlFor="goal">Funding goal:</label>
+                <input type="text" id="goal"
                 onChange={handleChange}></input>
             </div>
-            <div>
+            <div className="project-form-section">
                 <label htmlFor="funding_deadline">Funding deadline:</label>
                 <input type="date" id="funding_deadline"
                 onChange={handleChange}></input>
             </div>
-            <div>
+            <div className="project-form-section">
                 <label htmlFor="min_players">Minimum players:</label>
                 <input type="text" id="min_players"
                 onChange={handleChange}></input>
             </div>
-            <div>
+            <div className="project-form-section">
                 <label htmlFor="max_players">Maximum players:</label>
                 <input type="text" id="max_players"
                 onChange={handleChange}></input>
             </div>
-            <div>
+            <div className="project-form-section">
                 <label htmlFor="max_age">Minimum age:</label>
                 <input type="text" id="min_age"
                 onChange={handleChange}></input>
             </div>
-            <div>
+            <div className="project-form-section">
                 <label htmlFor="min_minutes">Minimum minutes of play:</label>
                 <input type="text" id="min_minutes"
                 onChange={handleChange}></input>
             </div>
-            <div>
+            <div className="project-form-section">
                 <label htmlFor="max_minutes">Maximum minutes of play:</label>
                 <input type="text" id="max_minutes"
                 onChange={handleChange}></input>
             </div>
-            <div>
+            <div className="project-form-section">
                 <label htmlFor="thumbnail_image">Thumbnail image:</label>
-                <input type="text" id="thumbnail_image"
+                <input type="text" id="thumbnail_image" placeholder="365px by 300px"
                 onChange={handleChange}></input>
             </div>
 
             <button type="submit" onClick={handleSubmit}>Submit</button>
 
             {
-                formError && <p>There was an error submitting your project. Please try again.</p>
+                formError && <p id="project-form-error">There was an error submitting your project. Please try again.</p>
             }
 
         </form>

@@ -1,16 +1,16 @@
-#create-project-form {
+#login-form {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
 }
 
-#create-project-form h1 {
+#login-form h1 {
     color: #F3F9E3;
     margin: auto;
     padding-bottom: 2%;
 }
 
-#create-project-form label {
+#login-form label {
     display: inline-block;
     width: 250px;
     text-align: right;
@@ -18,30 +18,24 @@
     color: whitesmoke;  
 }
 
-#create-project-form input {
+#login-form input {
     background-color: whitesmoke;
     height: 2em;
     border-radius: 5px;
-    padding-bottom: 10px;
+    margin-bottom: 1%;
     border: none;
-    width: 400px;
+    width: 300px;
 }
 
-#create-project-form button {
+#login-form button {
     background-color: #F9A03F;
     margin: auto;
     width: 300px;
     margin-top: 20px;
-    margin-bottom: 20px;
 }
 
-.project-form-section {
+.login-form-section {
     display: flex;
     justify-content: center;
-    margin-bottom: 5px;
-}
-
-#project-form-error {
-    color:#F3F9E3;
-    margin: auto;
+    margin-bottom: 5px;;
 }
