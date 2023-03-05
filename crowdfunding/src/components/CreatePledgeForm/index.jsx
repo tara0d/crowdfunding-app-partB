@@ -72,8 +72,8 @@ function CreatePledgeForm() {
                 onChange={handleChange}></input>
             </div>
             <div>
-                <label htmlFor="anonymous">Anonymous:</label>
-                <input type="radio" id="goal" placeholder="How much do you need to raise?"
+                <label htmlFor="goal">Goal:</label>
+                <input type="text" id="goal" placeholder="How much do you need to raise?"
                 onChange={handleChange}></input>
             </div>
             <div>

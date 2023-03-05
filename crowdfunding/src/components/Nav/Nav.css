@@ -1,9 +1,8 @@
 * {
     box-sizing: border-box;
-    background-color: #F3F9E3;
+    background-color: #204E4A;
     /* border: 1px solid black; */
 }
-
 
 #navigation {
     background-color: #F3F9E3;
@@ -21,7 +20,10 @@
 }
 
 #nav-logo {
-
+    height: auto;
+    object-fit: cover;
+    background-color: #F3F9E3;
+    padding-left: 5%;
 }
 
 #nav-links {
@@ -29,9 +31,16 @@
     justify-content: space-around;
     /* flex-grow: 2; */
     padding: 15px;
+    background-color: #F3F9E3;
 }
 
-.nav-links-text {
+.nav-links-text a {
     padding:15px;
-    font-size: 18px;
+    font-size: 21px;
+    background-color: #F3F9E3;
+    color:#204E4A;
+}
+
+.nav-links-text a:hover {
+    color:#880D1E;
 }

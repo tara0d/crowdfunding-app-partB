@@ -4,7 +4,7 @@ import Nav from './components/Nav';
 import HomePage from "./pages/HomePage/HomePage";
 import CreateProjectPage from "./pages/CreateProjectPage";
 import LoginPage from "./pages/LoginPage";
-import ProjectPage from "./pages/ProjectPage";
+import ProjectPage from "./pages/ProjectPage/ProjectPage";
 
 const HeaderLayout = () => {
   return (

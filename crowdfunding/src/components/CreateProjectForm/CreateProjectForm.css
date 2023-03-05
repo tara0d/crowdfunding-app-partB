@@ -1,0 +1,23 @@
+#create-project-form {
+    border: 1px solid green;
+}
+
+#create-project-form label {
+    display: inline-block;
+    width: 250px;
+    text-align: right;
+    padding-right: 15px;
+    color: whitesmoke;  
+}
+
+#create-project-form input {
+    background-color: whitesmoke;
+    height: 2em;
+    border-radius: 5px;
+    padding-bottom: 10px;
+    border: none;
+}
+
+#create-project-form button {
+    background-color: #F9A03F;
+}

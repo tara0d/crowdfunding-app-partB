@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import ReactDOM from 'react-dom';
 import { useNavigate } from 'react-router-dom';
+import "./CreateProjectForm.css";
+
 
 // import { useNavigate } from 'react-router-dom';
 
@@ -10,9 +12,6 @@ function CreateProjectForm() {
         title: '',
         description: '',
         goal: '',
-        //is_open - want to be automatically true
-        //date_created - want o be automatically set
-        //is_funded - want to be automatically false
         funding_deadline:'',
         min_players: '',
         max_players:'',
@@ -71,7 +70,7 @@ function CreateProjectForm() {
 
     return(
         
-        <form>
+        <form id="create-project-form">
             <div>
                 <label htmlFor="title">Title:</label>
                 <input type="text" id="title" placeholder="Name of game"
